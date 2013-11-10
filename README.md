@@ -8,29 +8,36 @@ Basic Usage
 
 Create a prototype by extending the Root object:
 
-    var User = Root.create();
+```javascript
+var User = Root.create();
+```
 
 You can add fields by calling the meta-method:
 
-    User.
-        field('firstname').
-        field('lastname');
+```javascript
+User.
+    field('firstname').
+    field('lastname');
+```
 
 You can add other definitions using def:
 
-    User.
-        def('fullname', function () {
-            return this.firstname() + ' ' + this.lastname();
-        });
+```javascript
+User.
+    def('fullname', function () {
+        return this.firstname() + ' ' + this.lastname();
+    });
+```
 
 Fields are getter/setters, like jQuery has.
 
 ```javascript
-    var me = User.create().
-        firstname('Scato').
-        lastname('Eggen');
+var me = User.create().
+    firstname('Scato').
+    lastname('Eggen');
 
-    console.log(me.fullname()); // 'Scato Eggen'
+console.log(me.fullname()); // 'Scato Eggen'
+```
 
 Events
 ------
