@@ -73,10 +73,10 @@ even(function (number) {
     console.log(number);
 });
 
-number(1);
-number(2); // 2
-number(3);
-number(4); // 4
+numbers(1);
+numbers(2); // 2
+numbers(3);
+numbers(4); // 4
 ```
 
 TODO
