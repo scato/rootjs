@@ -16,12 +16,20 @@ You can add fields by calling the meta-method:
         field('firstname').
         field('lastname');
 
-You can add other definitions by def:
+You can add other definitions using def:
 
     User.
         def('fullname', function () {
             return this.firstname() + ' ' + this.lastname();
         });
+
+Fields are getter/setters, like jQuery has.
+
+    var me = User.create().
+        firstname('Scato').
+        lastname('Eggen');
+
+    console.log(me.fullname()); // 'Scato Eggen'
 
 TODO
 ----
