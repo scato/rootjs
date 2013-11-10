@@ -48,19 +48,41 @@ Objects can also have events. Again like jQuery, they are methods that are overl
 User.
     event('login');
 
-me.login(function (date) {
+var undo = me.login(function (date) {
     console.log(date);
 });
 
 me.login(new Date()); // Sun Nov 10 2013 14:09:22 GMT+0100 (CET)
 ```
 
+The only way to remove a listener is by calling the undo-token that was returned:
+
+```javascript
+undo();
+```
+
+You can also have stand-alone events, which have all kinds of interesting methods:
+
+```javascript
+var numbers = event();
+var even = numbers.filter(function (number) {
+    return number % 2 === 0;
+});
+
+even(function (number) {
+    console.log(number);
+});
+
+even(1);
+even(2); // 2
+even(3);
+even(4); // 4
+```
+
 TODO
 ----
 
-  * Add source code and tests
-  * Add documentation for events: Root.event() and event()
-  * Add documentation for traits: Trait and Root.adopt()
+  * Add traits: Trait and Root.adopt()
   * Add documentation for advanced usage: Root.override(), Root.is(), Root.base and Root.ref()
   * Add to npm
   * Create client-side version for browsers
