@@ -1,6 +1,6 @@
 {
   "name": "root-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Root.js, a metaprotogramming framework",
   "private": false,
   "scripts": {

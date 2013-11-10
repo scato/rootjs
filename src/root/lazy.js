@@ -32,7 +32,7 @@ require('./').def('lazy', function (name, factory) {
         return inner.bind.apply(inner, arguments);
     };
 
-    this[name] = outer;
+    this.def(name, outer);
 
     return this;
 });

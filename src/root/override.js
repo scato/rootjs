@@ -11,9 +11,9 @@ require('./').def('override', function (name, factory) {
 
     var base = this[name];
 
-    this[name] = function () {
+    this.def(name, function () {
         return factory(base.bind(this)).apply(this, arguments);
-    };
+    });
 
     return this;
 });
