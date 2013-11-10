@@ -25,11 +25,28 @@ You can add other definitions using def:
 
 Fields are getter/setters, like jQuery has.
 
+```javascript
     var me = User.create().
         firstname('Scato').
         lastname('Eggen');
 
     console.log(me.fullname()); // 'Scato Eggen'
+
+Events
+------
+
+Objects can also have events. Again like jQuery, they are methods that are overloaded to either add a listener or trigger the event.
+
+```javascript
+User.
+    event('login');
+
+me.login(function (date) {
+    console.log(date);
+});
+
+me.login(new Date()); // Sun Nov 10 2013 14:09:22 GMT+0100 (CET)
+```
 
 TODO
 ----
@@ -38,4 +55,6 @@ TODO
   * Add documentation for events: Root.event() and event()
   * Add documentation for traits: Trait and Root.adopt()
   * Add documentation for advanced usage: Root.override(), Root.is(), Root.base and Root.ref()
+  * Add to npm
+  * Create client-side version for browsers
 
