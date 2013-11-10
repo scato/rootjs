@@ -3,6 +3,22 @@ Root.js
 
 Root.js is a framework for prototypal inheritance in JavaScript
 
+Getting Started
+---------------
+
+To get started, install Root.js using npm:
+
+```
+$ npm install root-js
+```
+
+The package contains the Root object and some other utilities like event.
+
+```javascript
+var Root = require('root-js').Root,
+    event = require('root-js').event;
+```
+
 Basic Usage
 -----------
 

@@ -1,6 +1,6 @@
 {
-  "name": "Root",
-  "version": "0.0.1",
+  "name": "root-js",
+  "version": "0.0.2",
   "private": false,
   "scripts": {
     "test": "jasmine-node test/"
