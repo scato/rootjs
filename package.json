@@ -1,11 +1,14 @@
 {
   "name": "root-js",
-  "version": "0.0.2",
+  "version": "0.0.4",
+  "description": "Root.js, a metaprotogramming framework",
   "private": false,
   "scripts": {
     "test": "jasmine-node test/"
   },
-  "dependencies": {
+  "devDependencies": {
     "jasmine-node": "*"
-  }
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/scato/rootjs"
 }
