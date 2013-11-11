@@ -1,6 +1,7 @@
 var Root = require('../').Root,
     event = require('../').event;
 
+// fields can have initializers, super handy for mutable values like arrays
 var User = Root.create().
     field('name').
     field('messages', function () {
@@ -21,6 +22,10 @@ var Message = Root.create().
         return this.body().replace(/^\/me /, this.sender().name() + ' ');
     });
 
+// lazy methods take a factory method, the result is used as the actual method
+// the ref method binds a certain method to the object, handy for events
+// events have a special bind method that returns a new event
+// this preserves methods like map, filter, merge, etc.
 var Room = Root.create().
     event('all').
     lazy('announce', function () {
@@ -39,7 +44,9 @@ var Room = Root.create().
     }).
     def('add', function (user) {
         var incoming = user.ref('says').map(function (body) {
-            return Message.create().sender(user).body(body);
+            return Message.create().
+                sender(user).
+                body(body);
         });
 
         var outgoing = this.ref('announce').merge(this.ref('action'));
