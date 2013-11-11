@@ -1,5 +1,4 @@
-var Root = require('../').Root,
-    event = require('../').event;
+var Root = require('../').Root;
 
 // every person has an event 'shout'
 var Person = Root.create().

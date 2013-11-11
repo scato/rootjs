@@ -44,6 +44,10 @@ var father = Human.create().
     energy(1000).
     age(30);
 
-// No milk!
-mother.milk(father);
+try {
+    mother.milk(father);
+} catch (err) {
+    // No milk!
+    console.log(err.message);
+}
 
