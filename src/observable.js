@@ -69,6 +69,22 @@ function observable(left) {
         });
     };
 
+    left.recycle = function () {
+        var result = observable(function (observer) {
+            var undo = left(function (value) {
+                observer(value);
+
+                undo = result(observer);
+            });
+
+            return function () {
+                undo();
+            };
+        });
+
+        return result;
+    };
+
     return left;
 }
 
