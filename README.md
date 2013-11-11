@@ -95,11 +95,8 @@ numbers(3);
 numbers(4); // 4
 ```
 
-TODO
-----
+More...
+-------
 
-  * Add traits: Trait and Root.adopt()
-  * Add documentation for advanced usage: Root.override(), Root.is(), Root.base and Root.ref()
-  * Add to npm
-  * Create client-side version for browsers
+Check out the [examples](https://github.com/scato/rootjs/tree/master/examples) for more details.
 
