@@ -1,7 +1,7 @@
 "use strict";
 
-var Root = require('../../src/root/'),
-    Trait = require('../../src/trait/');
+var Root = require('../../src/root'),
+    Trait = require('../../src/trait');
 
 describe("Trait", function () {
     describe("def", function () {

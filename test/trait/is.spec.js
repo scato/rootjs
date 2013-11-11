@@ -1,7 +1,7 @@
 "use strict";
 
-var Root = require('../../src/root/'),
-    Trait = require('../../src/trait/');
+var Root = require('../../src/root'),
+    Trait = require('../../src/trait');
 
 describe("Trait", function () {
     describe("is", function () {
@@ -22,10 +22,14 @@ describe("Trait", function () {
             var Record = Root.create().
                 use(Trait);
 
+            var Entity = Root.create().
+                use(Trait);
+
             var User = Root.create().
-                use(Record);
+                use(Record, Entity);
 
             expect(User.is(Record)).toBe(true);
+            expect(User.is(Entity)).toBe(true);
             expect(User.is(Root)).toBe(true);
         });
     });
