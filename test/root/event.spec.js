@@ -1,6 +1,6 @@
 "use strict";
 
-var Root  = require('../../src/root/'),
+var Root  = require('../../src/root'),
     event = require('../../src/event');
 
 describe("Root", function () {

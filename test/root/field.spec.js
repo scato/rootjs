@@ -1,6 +1,6 @@
 "use strict";
 
-var Root  = require('../../src/root/'),
+var Root  = require('../../src/root'),
     field = require('../../src/field');
 
 describe("Root", function () {
