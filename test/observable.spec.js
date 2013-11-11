@@ -1,6 +1,7 @@
 "use strict";
 
-var event   = require('../src/event');
+var event      = require('../src/event'),
+    observable = require('../src/observable');
 
 describe("observable", function () {
     it("can be mapped", function () {
@@ -120,5 +121,20 @@ describe("observable", function () {
         expect(foobar).not.toHaveBeenCalledWith("foo");
         expect(foobar).toHaveBeenCalledWith("foz");
         expect(foobar).not.toHaveBeenCalledWith("bar");
+    });
+
+    it("can be identified", function () {
+        var a = event();
+        var b = a.one();
+
+        expect(b.is(observable)).toBe(true);
+    });
+
+    it("can be bound to a context", function () {
+        var a = event();
+        var b = a.one();
+        var c = b.bind({});
+
+        expect(c.is(observable)).toBe(true);
     });
 });

@@ -85,6 +85,14 @@ function observable(left) {
         return result;
     };
 
+    left.is = function (right) {
+        return right === observable;
+    };
+
+    left.bind = function () {
+        return observable(Function.prototype.bind.apply(left, arguments));
+    };
+
     return left;
 }
 
