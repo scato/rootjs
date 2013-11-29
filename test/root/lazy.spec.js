@@ -95,5 +95,17 @@ describe("Root", function () {
             expect(test1.ref('foo')).toBe(bounds[1]);
             expect(test2.ref('foo')).toBe(bounds[2]);
         });
+
+        it("doesn't break because of Traits", function () {
+            var Proto1 = Root.create();
+            var Proto2 = Root.create();
+
+            Proto1.lazy('foo', function () {
+                return function () {};
+            });
+
+            Proto2.foo = Proto1.foo;
+            Proto2.foo();
+        });
     });
 });

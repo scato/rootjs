@@ -11,9 +11,7 @@ require('./').def('lazy', function (name, factory) {
             }
 
             return inner;
-        }
-
-        if (!context.hasOwnProperty(name)) {
+        } else {
             context.lazy(name, factory);
         }
 
